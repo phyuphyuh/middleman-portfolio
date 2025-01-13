@@ -1,4 +1,7 @@
 // Specific CSS for your home-page
+body {
+  background-image: var(--bs-gradient);
+}
 .content {
-  margin-top: 90vh;
+  margin-top: 95vh;
 }
