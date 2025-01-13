@@ -3,5 +3,39 @@ body {
   background-image: var(--bs-gradient);
 }
 .content {
-  margin-top: 95vh;
+  margin-top: 90vh;
+}
+
+.scroll-section {
+  height: 180vh;
+  position: relative;
+
+  #about {
+    width: 400px;
+    position: sticky;
+    top: 100%;
+    transform: translateY(-0%);
+    left: 100%;
+    white-space: nowrap;
+    transition: left 0.5s east-out;
+
+    .profile-pic {
+      width: 250px;
+      height: 340px;
+      overflow: hidden;
+
+      img {
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+    p {
+      white-space: normal;
+      background-color: $aureolin;
+      color: $moonstone;
+      padding: 16px;
+      border-radius: 24px;
+      line-height: 1.2;
+    }
+  }
 }
