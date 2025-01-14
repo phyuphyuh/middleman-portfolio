@@ -1,8 +1,8 @@
-- name: Longest Word Game
+- name: Watchlist
   description: Decent description of the app
   image: projects/placeholder.png
-  url: https://www.google.com
-  github: https://www.github.com
+  url: https://watchlist-pp-b1b5f2bf4594.herokuapp.com/lists
+  github: https://github.com/phyuphyuh/rails-watch-list
   online: true
 
 - name: Movie Watchlist
