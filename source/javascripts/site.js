@@ -7,8 +7,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const bannerText = document.querySelector('.banner-text');
   const projects = document.getElementById('projects');
 
-  const scrollSection = document.querySelector(".scroll-section");
-  const scrollingDiv = document.querySelector("#about");
+  const scrollSection = document.querySelector('.scroll-section');
+  const scrollingDiv = document.getElementById('about');
 
   window.addEventListener('scroll', () => {
     const scrollY = window.scrollY;
