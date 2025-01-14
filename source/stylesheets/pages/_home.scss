@@ -13,8 +13,9 @@
   #about {
     width: 200vw;
     position: fixed;
-    top: 62%;
+    // top: 62%;
     // transform: translateY(-50%);
+    bottom: 0;
     left: 100%;
     white-space: nowrap;
     transition: left 0.5s east-out;
