@@ -7,20 +7,20 @@
   .banner-text {
     margin-left: 100px;
     width: 440px;
-    font-size: 2rem;
+    // font-size: 2rem;
     line-height: 1.3;
 
     &.active {
-      color: $aureolin;
-      text-shadow: 2px 2px $moonstone;
+      color: $polynesianblue;
+      text-shadow: 2px 2px $alabaster;
     }
 
     .scroll-text {
       transition: color 0.3s ease;
 
       &.active {
-      color: $aureolin;
-      text-shadow: 2px 2px $moonstone;
+      color: $moonstone;
+      text-shadow: 1px 1px $alabaster;
       }
     }
   }

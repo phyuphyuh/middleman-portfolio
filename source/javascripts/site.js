@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('scroll', () => {
     const scrollY = window.scrollY;
 
-    if (scrollY > 0 && scrollY < 100) {
+    if (scrollY >= 0 && scrollY < 100) {
       span1.classList.add('active');
       span2.classList.remove('active');
       span3.classList.remove('active');
@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
     } else if (scrollY > 350) {
       // span1.classList.remove('active');
       // span2.classList.remove('active');
-      // span3.classList.remove('active');
+      span3.classList.remove('active');
       bannerText.classList.add('active');
     }
 
@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const { top, height } = scrollSection.getBoundingClientRect();
       const scrollPercentage = Math.min(Math.max(-top / height, 0), 1);
 
-      const positionX = (1 - scrollPercentage * 2) * 100;
+      const positionX = (1 - scrollPercentage * 2) * 200;
       scrollingDiv.style.left = `${positionX}%`;
     }
   });
