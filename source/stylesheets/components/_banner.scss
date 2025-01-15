@@ -16,8 +16,9 @@
       text-shadow: 2px 2px $alabaster;
     }
     &.after {
-      color: $moonstone;
-      text-shadow: 2px 2px $alabaster;
+      color: transparent;
+      background: var(--bs-gradient);
+      background-clip: text;
     }
 
     .scroll-text {

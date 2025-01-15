@@ -1,5 +1,5 @@
 - name: Watchlist
-  description: Decent description of the app
+  description: Create movie watchlists of your favorite films, write reviews for the movies in them, and share yourself in film!
   image: projects/placeholder.png
   url: https://watchlist-pp-b1b5f2bf4594.herokuapp.com/lists
   github: https://github.com/phyuphyuh/rails-watch-list

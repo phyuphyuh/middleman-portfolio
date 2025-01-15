@@ -34,9 +34,12 @@ document.addEventListener('DOMContentLoaded', () => {
       // span2.classList.remove('active');
       span3.classList.remove('active');
       bannerText.classList.add('active');
+      bannerText.classList.remove('after');
     } else if (scrollY >= projectsPosition) {
       bannerText.classList.remove('active');
       bannerText.classList.add('after');
+    } else {
+      bannerText.classList.remove('after');
     }
 
     if (scrollSection && scrollingDiv) {
