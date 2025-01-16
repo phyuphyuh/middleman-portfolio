@@ -9,11 +9,14 @@
 
   .banner-text {
     line-height: 1.3;
-    transition: color 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
 
     &.active {
-      color: $ruddy-blue;
-      text-shadow: 2px 2px $alabaster;
+      // color: $ruddy-blue;
+      // text-shadow: 2px 2px $alabaster;
+      color: transparent;
+      background: linear-gradient(180deg, $steel-blue, $blue-gray 50%, $ruddy-blue);
+      background-clip: text;
     }
     &.after {
       color: transparent;

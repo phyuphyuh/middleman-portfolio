@@ -7,9 +7,9 @@
   </div>
   <%# <div class="cards"> %>
   <% data.projects.each do |project| %>
-    <div class="card-product">
+    <div class="project">
       <%= image_tag project.image, alt: "project image" %>
-      <div class="card-product-infos w-100">
+      <div class="project-infos w-100">
         <div class="d-flex justify-content-between align-items-center">
           <h2><%= project.name %></h2>
           <div class="card-links">
@@ -27,8 +27,11 @@
       </div>
     </div>
   <% end %>
+  <div id="clouds">
+    <%= image_tag "cloud.png" %>
+  </div>
   <%# </div> %>
-</div>
-<%# </div>
+  <%# </div> %>
+  <%# </div>
   </div>
 </div> %>

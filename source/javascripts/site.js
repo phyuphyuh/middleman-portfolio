@@ -8,11 +8,13 @@ document.addEventListener('DOMContentLoaded', () => {
   const scrollSection = document.querySelector('.scroll-section');
   const scrollingDiv = document.getElementById('about');
 
+
+
   window.addEventListener('scroll', () => {
     const scrollY = window.scrollY;
     const spanPositions = spans.map((span, index) => {
       const adjustedStart = index === 0 ? span.offsetTop - 300 : span.offsetTop;
-      const adjustedEnd = index === 0 ? adjustedStart + 400 : span.offsetTop + 150;
+      const adjustedEnd = index === 0 ? adjustedStart + 400 : span.offsetTop + 100;
       return { start: adjustedStart, end: adjustedEnd };
     });
     const projectsPosition = projects.offsetTop;
@@ -30,7 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const lastSpan = spans.length - 1;
 
-    if (scrollY >= spanPositions[lastSpan].end - 50 && scrollY < projectsPosition) {
+    if (scrollY >= spanPositions[lastSpan].end && scrollY < projectsPosition) {
       bannerText.classList.add('active');
       bannerText.classList.remove('after');
     } else if ((scrollY >= projectsPosition)) {
@@ -48,6 +50,9 @@ document.addEventListener('DOMContentLoaded', () => {
       const positionX = (1 - scrollPercentage * 2) * 200;
       scrollingDiv.style.left = `${positionX}%`;
     }
+
+
+
   });
 
 });

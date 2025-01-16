@@ -1,7 +1,7 @@
 // Specific CSS for your home-page
-// body {
-//   background-image: var(--bs-gradient);
-// }
+body {
+  // overflow-x: hidden;
+}
 
 // About
 .scroll-section {
@@ -46,15 +46,18 @@
 // Projects
 #projects {
   padding-top: 80vh;
+  // position: relative;
 
   .masked-text {
     background-color: $ivory;
     overflow: hidden;
+    // margin-bottom: 100px;
 
     h2 {
       color: transparent;
       font-weight: 800;
       font-size: calc(2.5rem + 1.62vw);
+      margin-bottom: 0px;
       background-image: url('../../images/sky1.jpg');
       background-position: 0 50%;
       background-size: 200%;
@@ -72,5 +75,23 @@
             background-position: 100% 50%;
         }
     }
+  }
+
+  #clouds {
+    width: 100vw;
+    margin: -150px calc(50% - 50vw) 0;
+    z-index: 5;
+    position: sticky;
+    bottom: 0;
+
+    img {
+      width: 100%;
+      opacity: 0.8;
+    }
+  }
+
+  .project {
+    margin-top: 200px;
+    z-index: 100;
   }
 }
