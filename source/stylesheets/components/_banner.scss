@@ -9,7 +9,7 @@
 
   .banner-text {
     line-height: 1.3;
-    transition: color 0.3s ease;
+    transition: color 0.3s ease-in-out;
 
     &.active {
       color: $ruddy-blue;
@@ -21,8 +21,8 @@
       background-clip: text;
     }
 
-    .scroll-text {
-      transition: color 0.3s ease;
+    .span-text {
+      transition: color 0.2s ease-out;
 
       &.active {
       color: $ruddy-blue;
