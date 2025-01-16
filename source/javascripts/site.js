@@ -51,8 +51,6 @@ document.addEventListener('DOMContentLoaded', () => {
       scrollingDiv.style.left = `${positionX}%`;
     }
 
-
-
   });
 
 });
