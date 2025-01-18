@@ -3,21 +3,17 @@ body {
   // overflow-x: hidden;
 }
 
-.content {
-  margin-top: 90vh;
-}
-
 // About
 .scroll-section {
-  // height: 200vh;
+  height: 200vh;
   position: relative;
 
   #about {
-    // width: 200vw;
-    // position: fixed;
-    // bottom: 0;
-    // left: 100%;
-    // white-space: nowrap;
+    width: 200vw;
+    position: fixed;
+    bottom: 0;
+    left: 100%;
+    white-space: nowrap;
     // transition: left 0.1s linear;
 
     .profile-pic {
@@ -49,7 +45,7 @@ body {
 
 // Projects
 #projects {
-  padding-top: 20vh;
+  padding-top: 80vh;
   // position: relative;
 
   .masked-text {

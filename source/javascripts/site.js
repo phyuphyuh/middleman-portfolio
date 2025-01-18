@@ -43,13 +43,13 @@ document.addEventListener('DOMContentLoaded', () => {
       bannerText.classList.remove('after');
     }
 
-    // if (scrollSection && scrollingDiv) {
-    //   const { top, height } = scrollSection.getBoundingClientRect();
-    //   const scrollPercentage = Math.min(Math.max(-top / height, 0), 1);
+    if (scrollSection && scrollingDiv) {
+      const { top, height } = scrollSection.getBoundingClientRect();
+      const scrollPercentage = Math.min(Math.max(-top / height, 0), 1);
 
-    //   const positionX = (1 - scrollPercentage * 2) * 200;
-    //   scrollingDiv.style.left = `${positionX}%`;
-    // }
+      const positionX = (1 - scrollPercentage * 2) * 200;
+      scrollingDiv.style.left = `${positionX}%`;
+    }
 
   });
 
