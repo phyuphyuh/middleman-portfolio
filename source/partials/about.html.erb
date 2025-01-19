@@ -1,12 +1,15 @@
-<section class="scroll-section">
-  <div id="about">
-    <div class="profile-pic d-flex">
-      <%= image_tag "me3.png" %>
-      <p>
-        i love to create and design so i was naturally drawn to web development.
-        <span> i first dabbled in it when i was a senior in college.</span>
-        <span> recently, i completed a full-time coding program in tokyo, japan.</span>
-      </p>
-    </div>
+<section id="about">
+  <%# <div class="about-bg"></div> %>
+  <%# <div class="about-content"> %>
+  <div class="about-card card-left">
+    <%= image_tag "me3.png", class: "profile-pic" %>
   </div>
+  <div class="about-card card-right">
+    <p class="about-text">
+      i love to create and design so i was naturally drawn to web development.
+      <span> i first dabbled in it when i was a senior in college.</span>
+      <span> recently, i completed a full-time coding program in tokyo, japan.</span>
+    </p>
+  </div>
+  <%# </div> %>
 </section>

@@ -5,15 +5,13 @@ document.addEventListener('DOMContentLoaded', () => {
   const bannerText = document.querySelector('.banner-text');
   const projects = document.getElementById('projects');
 
-  const scrollSection = document.querySelector('.scroll-section');
-  const scrollingDiv = document.getElementById('about');
-
-
+  const aboutSection = document.getElementById('about');
+  const aboutCards = document.querySelectorAll('.about-card');
 
   window.addEventListener('scroll', () => {
     const scrollY = window.scrollY;
     const spanPositions = spans.map((span, index) => {
-      const adjustedStart = index === 0 ? span.offsetTop - 300 : span.offsetTop;
+      const adjustedStart = index === 0 ? span.offsetTop - 300 : span.offsetTop - 100;
       const adjustedEnd = index === 0 ? adjustedStart + 400 : span.offsetTop + 100;
       return { start: adjustedStart, end: adjustedEnd };
     });
@@ -43,14 +41,17 @@ document.addEventListener('DOMContentLoaded', () => {
       bannerText.classList.remove('after');
     }
 
-    if (scrollSection && scrollingDiv) {
-      const { top, height } = scrollSection.getBoundingClientRect();
-      const scrollPercentage = Math.min(Math.max(-top / height, 0), 1);
 
-      const positionX = (1 - scrollPercentage * 2) * 200;
-      scrollingDiv.style.left = `${positionX}%`;
+    const aboutSectionTop = aboutSection.getBoundingClientRect().top;
+    const aboutSectionBottom = aboutSection.getBoundingClientRect().bottom;
+
+
+    if (aboutSectionTop < window.innerHeight * 0.3 && aboutSectionBottom > 0) {
+      aboutCards.forEach((card) => card.classList.add('active'));
+    } else {
+      aboutCards.forEach((card) => card.classList.remove('active'));
     }
-
   });
+
 
 });
