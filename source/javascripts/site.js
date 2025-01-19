@@ -2,23 +2,21 @@
 
 document.addEventListener('DOMContentLoaded', () => {
   const spans = Array.from(document.querySelectorAll('.span-text'));
+  const bannerText = document.querySelector('.banner-text');
+  const projects = document.getElementById('projects');
+  const aboutSection = document.getElementById('about');
+  const aboutCards = document.querySelectorAll('.about-card');
+
   const spanPositions = spans.map((span, index) => {
     const adjustedStart = index === 0 ? span.offsetTop - 300 : span.offsetTop - 100;
     const adjustedEnd = index === 0 ? adjustedStart + 400 : span.offsetTop + 100;
     return { start: adjustedStart, end: adjustedEnd };
   });
+
   const lastSpan = spans.length - 1;
-  const bannerText = document.querySelector('.banner-text');
-  const projects = document.getElementById('projects');
+  const projectsPosition = projects.offsetTop - 350;
 
-  const aboutSection = document.getElementById('about');
-  const aboutCards = document.querySelectorAll('.about-card');
-
-  window.addEventListener('scroll', () => {
-    const scrollY = window.scrollY;
-    const projectsPosition = projects.offsetTop - 350;
-
-
+  const changeBannerSpan = (scrollY) => {
     spans.forEach((span, index) => {
       const { start, end } = spanPositions[index];
 
@@ -28,7 +26,9 @@ document.addEventListener('DOMContentLoaded', () => {
         span.classList.remove('active');
       }
     });
+  };
 
+  const changeBannerText = (scrollY) => {
     if (scrollY >= spanPositions[lastSpan].end && scrollY < projectsPosition) {
       bannerText.classList.add('active');
       bannerText.classList.remove('after');
@@ -39,7 +39,9 @@ document.addEventListener('DOMContentLoaded', () => {
       bannerText.classList.remove('active');
       bannerText.classList.remove('after');
     }
+  };
 
+  const animateAboutCards = () => {
     const aboutSectionTop = aboutSection.getBoundingClientRect().top;
     const aboutSectionBottom = aboutSection.getBoundingClientRect().bottom;
 
@@ -48,7 +50,14 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
       aboutCards.forEach((card) => card.classList.remove('active'));
     }
-  });
+  };
 
+  window.addEventListener('scroll', () => {
+    const scrollY = window.scrollY;
+
+    changeBannerSpan(scrollY);
+    changeBannerText(scrollY);
+    animateAboutCards();
+  });
 
 });
