@@ -2,6 +2,12 @@
 
 document.addEventListener('DOMContentLoaded', () => {
   const spans = Array.from(document.querySelectorAll('.span-text'));
+  const spanPositions = spans.map((span, index) => {
+    const adjustedStart = index === 0 ? span.offsetTop - 300 : span.offsetTop - 100;
+    const adjustedEnd = index === 0 ? adjustedStart + 400 : span.offsetTop + 100;
+    return { start: adjustedStart, end: adjustedEnd };
+  });
+  const lastSpan = spans.length - 1;
   const bannerText = document.querySelector('.banner-text');
   const projects = document.getElementById('projects');
 
@@ -10,12 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   window.addEventListener('scroll', () => {
     const scrollY = window.scrollY;
-    const spanPositions = spans.map((span, index) => {
-      const adjustedStart = index === 0 ? span.offsetTop - 300 : span.offsetTop - 100;
-      const adjustedEnd = index === 0 ? adjustedStart + 400 : span.offsetTop + 100;
-      return { start: adjustedStart, end: adjustedEnd };
-    });
-    const projectsPosition = projects.offsetTop;
+    const projectsPosition = projects.offsetTop - 350;
 
 
     spans.forEach((span, index) => {
@@ -28,8 +29,6 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
 
-    const lastSpan = spans.length - 1;
-
     if (scrollY >= spanPositions[lastSpan].end && scrollY < projectsPosition) {
       bannerText.classList.add('active');
       bannerText.classList.remove('after');
@@ -41,10 +40,8 @@ document.addEventListener('DOMContentLoaded', () => {
       bannerText.classList.remove('after');
     }
 
-
     const aboutSectionTop = aboutSection.getBoundingClientRect().top;
     const aboutSectionBottom = aboutSection.getBoundingClientRect().bottom;
-
 
     if (aboutSectionTop < window.innerHeight * 0.3 && aboutSectionBottom > 0) {
       aboutCards.forEach((card) => card.classList.add('active'));

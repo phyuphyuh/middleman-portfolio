@@ -10,10 +10,10 @@ html, body {
 // About
 #about {
   z-index: 100;
-  position: relative;
+  // position: relative;
   height: 100vh;
   display: flex;
-  align-items: start;
+  align-items: center;
   justify-content: center;
   overflow: hidden;
   perspective: 800px;
@@ -23,8 +23,8 @@ html, body {
     width: 300px;
     height: 400px;
     background-color: $alabaster;
-    box-shadow: 0 1px 5px rgba($alabaster, 10%);
-    border: 1px solid $alabaster;
+    box-shadow: 0 3px 6px rgba($darkerivory, 10%);
+    // border: 1px solid $alabaster;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -42,31 +42,40 @@ html, body {
     }
 
     .about-text {
-      color: $ruddy-blue;
+      color: $ivory;
       line-height: 1.1;
       text-wrap: pretty;
-      font-size: calc(1.255rem + 0.2vw);
+      font-size: calc(1.255rem + 0.6vw);
 
       span:first-of-type {
-        color: $blue-gray;
+        color: $alabaster;
       }
       span:nth-of-type(2) {
-        color: $steel-blue;
+        color: $darkerivory;
       }
     }
 
     &.card-left {
-      transform: translateY(20px) scale(0.95) rotateX(10deg) rotateY(-10deg);
+      transform: translateY(20px) scale(0.95) rotateX(10deg) rotateY(-15deg);
+
+      &.active {
+        transform: translateY(0) scale(1) rotateX(5deg) rotateY(-2deg);
+      }
     }
 
     &.card-right {
+      background: $ruddy-blue;
       padding: 10px;
       transform: translateY(100px) scale(0.90) rotateX(10deg) rotateY(10deg);
+
+      &.active {
+        transform: translateY(50px) scale(1) rotateX(5deg) rotateY(5deg);
+      }
     }
 
-    &.active {
-      transform: translateY(0) rotateX(0deg) rotateY(0deg) scale(1);
-    }
+    // &.active {
+    //   transform: translateY(0) rotateX(0deg) rotateY(0deg) scale(1);
+    // }
   }
 
 }
@@ -106,21 +115,21 @@ html, body {
     }
   }
 
-  #clouds {
-    width: 100vw;
-    margin: -150px calc(50% - 50vw) 0;
-    z-index: 5;
-    position: sticky;
-    bottom: 0;
+  // #clouds {
+  //   width: 100vw;
+  //   margin: -150px calc(50% - 50vw) 0;
+  //   z-index: 5;
+  //   position: sticky;
+  //   bottom: 0;
 
-    img {
-      width: 100%;
-      opacity: 0.9;
-    }
-  }
+  //   img {
+  //     width: 100%;
+  //     opacity: 0.9;
+  //   }
+  // }
 
   .project {
-    margin-top: 200px;
+    margin-top: 100px;
     z-index: 100;
   }
 }
